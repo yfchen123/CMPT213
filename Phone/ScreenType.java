@@ -1,4 +1,5 @@
 public enum ScreenType {
     OLED,
-    LCD
+    LCD,
+    LED
 }
