@@ -23,5 +23,14 @@ public class IteratorClass {
                 System.out.printf("%s%n", temp);
             }
         }
+        /* Will come back when we talk about in details Set/Map
+        while(dataltr.hasNext())
+        {
+            if(dataltr.getCurrent().contains("i"))
+            {
+                System.out.println("%s$n", dataltr.getCurrent());
+            }
+        }
+        */
     }
 }
