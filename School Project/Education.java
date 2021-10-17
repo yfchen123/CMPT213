@@ -1,7 +1,12 @@
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Iterator;
+import java.util.Collection;
 
 public class Education {
+
+    // where is your iterator?
     private List<Classroom> roomList;
     private List<Instructor> instructorList;
 
@@ -60,6 +65,22 @@ public class Education {
         }
         return str;
     }
+
+    /*
+     * This method exist for future purpose -> maybe some day we will use it
+    */
+
+    public Iterable<Classroom> rooms()
+    {
+        return new Iterable<Classroom>(){
+            
+            @Override
+            public Iterator<Classroom> iterator()
+            {
+                return Collection.unmodifiableCollections(roomList);
+            }
+        }
+    };
 
 
 }

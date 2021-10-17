@@ -1,8 +1,14 @@
 public class Classroom {
     private int roomNumber;
     private int capacity;
-    private boolean availability;
-    private Instructor classroomInstructor;
+    private boolean availability; // better with Time
+    private Instructor classroomInstructor; //courseInstructor
+
+    // where is your Javadoc?""
+
+    // can capacity be more than 1 million, where is your upper limit?
+
+    // can roomNumber more than 25000?
 
     public Classroom(int roomNumber, int capacity, boolean availability) {
         assert roomNumber >= 0 : "Please enter in a positive value for the room number.";
