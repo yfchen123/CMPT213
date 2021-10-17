@@ -9,5 +9,7 @@ public class ClassroomTester {
         //secondClassroom.setCapacity(-5);
 
         System.out.println(secondClassroom.toString());
+        
+        // test each method at least 1 time
     }
 }
