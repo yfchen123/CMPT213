@@ -40,4 +40,10 @@ public class Dictionary extends Book{
    /* public int getPages() {
         return super.getPages();
     }*/
+    @Override
+    public String toString()
+    {
+        String out = "[pages: " + this.getPages() + ", definitions: " + this.definitions + "]";
+        return out;
+    }
 }

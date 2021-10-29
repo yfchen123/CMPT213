@@ -17,4 +17,11 @@ public class Book {
     public void setPages(int pages) {
         this.pages = pages;
     }
+
+    @Override
+    public String toString()
+    {
+        String out = "[ pages: " + this.pages + " ]";
+        return out;
+    }
 }
