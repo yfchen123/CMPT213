@@ -141,20 +141,22 @@ class Rectangle extends GeometricShape{
 
     /**
      * This is the constructor for creating a rectangle.
-     * @param x
-     * @param y
-     * @param height
-     * @param width
+     * @param x: if x <= 0, system force to set it to 0
+     * @param y: if y <= 0, system force to set it to 0
+     * @param height: if height <= 0, system force to set it to 0
+     * @param width: if width <= 0, system force to set it to 0
      */
 
     public Rectangle(int x, int y, int height, int width){
         super(x, y);
-        if(height <= 0 || width <= 0){
-            System.out.println("Please enter in positive integers for width and height.");
-            return;
-        }
-        this.height = height;
-        this.width = width;
+        /*
+         * If you did NOT check here, but in your javadoc you said I only accept positive
+         * values, it is good enough
+         */
+        if(height <= 0) this.height = 0;
+        else this.height = height;
+        if(width <= 0) this.width = 0;
+        else this.width = width;
     }
 
     public int getHeight(){
@@ -194,7 +196,6 @@ class Rectangle extends GeometricShape{
 }
 
 class Square extends Rectangle{
-    private int length;
     // body
     public Square(int x, int y, int length){
         super(x, y, length, length);
@@ -221,8 +222,8 @@ class Oval extends GeometricShape{
     public Oval(int x, int y, int h_radius, int v_radius) {
         super(x, y);
         if(h_radius <= 0 || v_radius <= 0){
-            System.out.println("Both Horizontal radius and vertical radius should be larger than 0.");
-            return;
+            this.h_radius = 0;
+            this.v_radius = 0;
         }
         this.h_radius = h_radius;
         this.v_radius = v_radius;
