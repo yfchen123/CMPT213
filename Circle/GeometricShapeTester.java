@@ -85,8 +85,10 @@ public class GeometricShapeTester{
 
     public GeometricShape getMax(){
         // body
+        if(shapes.length <= 0){
+            return null;
+        }
         int largest = 0;
-
         for(int i = 0; i < shapes.length; i++){
             if(shapes[i].getArea() > shapes[largest].getArea()){
                 largest = i;
@@ -94,9 +96,11 @@ public class GeometricShapeTester{
         }
         return shapes[largest];
     }
+    /*
+     * Insertion, QuickSort
+     */
     public void sort(){
         // body
-
         for(int i = 0; i < shapes.length; i++){
             int smallest = i;
             for(int j = i; j < shapes.length; j++){
@@ -110,11 +114,10 @@ public class GeometricShapeTester{
 
         }
     }
+
     public GeometricShape[] getShapes(){
         return shapes;
     }
-
-
 }
 
 abstract class GeometricShape{
@@ -185,11 +188,11 @@ class Rectangle extends GeometricShape{
 
     @Override
     public String toString(){
-        String s1 = "Shape: " + this.getClass();
-        s1 += " ,X-coordinate: " + this.getX();
-        s1 += " ,Y-coordinate: " + this.getY();
-        s1 += " ,Height: " + this.height + " ,Width: " + this.width;
-        s1 += " ,Area: " + this.getArea();
+        String s1 = "Rectangle: [";
+        s1 += "x: " + this.getX();
+        s1 += ", y: " + this.getY();
+        s1 += " ,height: " + this.height + " ,width: " + this.width;
+        s1 += " ,area: " + this.getArea() + "]";
         return s1;
     }
 
@@ -203,11 +206,11 @@ class Square extends Rectangle{
 
     @Override
     public String toString(){
-        String s1 = "Shape: " + this.getClass();
-        s1 += " ,X-coordinate: " + this.getX();
-        s1 += " ,Y-coordinate: " + this.getY();
-        s1 += " ,Height: " + super.getHeight() + " ,Width: " + super.getWidth();
-        s1 += " ,Area: " + this.getArea();
+        String s1 = "Square: [";
+        s1 += "x: " + this.getX();
+        s1 += ", y: " + this.getY();
+        s1 += " ,length: " + super.getHeight();
+        s1 += " ,area: " + this.getArea() + "]";
         return s1;
     }
 
@@ -240,16 +243,16 @@ class Oval extends GeometricShape{
 
     @Override
     public double getArea(){
-        return h_radius * v_radius * Math.PI;
+        return Math.round(h_radius * v_radius * Math.PI);
     }
 
     @Override
     public String toString(){
-        String s1 = "Shape: " + this.getClass();
-        s1 += " ,X-coordinate: " + this.getX();
-        s1 += " ,Y-coordinate: " + this.getY();
-        s1 += " ,Horizontal Radius: " + h_radius + " ,Vertical Radius: " + v_radius;
-        s1 += " ,Area: " + this.getArea();
+        String s1 = "Oval: [";
+        s1 += "x: " + this.getX();
+        s1 += ", y: " + this.getY();
+        s1 += " ,h_radius: " + h_radius + " ,v_radius: " + v_radius;
+        s1 += " ,area: " + this.getArea() + "]";
         return s1;
     }
 }
@@ -262,11 +265,11 @@ class Circle extends Oval{
 
     @Override
     public String toString(){
-        String s1 = "Shape: " + this.getClass();
-        s1 += " ,X-coordinate: " + this.getX();
-        s1 += " ,Y-coordinate: " + this.getY();
-        s1 += " ,Horizontal Radius: " + super.getH_radius() + " ,Vertical Radius: " + super.getV_radius();
-        s1 += " ,Area: " + this.getArea();
+        String s1 = "Circle: [";
+        s1 += "x: " + this.getX();
+        s1 += " ,y: " + this.getY();
+        s1 += " ,radius: " + super.getH_radius();
+        s1 += " ,area: " + this.getArea() + "]";
         return s1;
     }
 }
