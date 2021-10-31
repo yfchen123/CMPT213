@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class MagicEightBall {
     private JTextField questionTextField;
@@ -17,13 +18,14 @@ public class MagicEightBall {
         applicationFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         questionTextField = new JTextField(COLUMN);
-        applicationFrame.add(questionTextField);
+        // if you do NOT set the border, it stays in the CENTER
+        applicationFrame.add(questionTextField, BorderLayout.NORTH);
 
         answerLabel = new JLabel(answer);
-        applicationFrame.add(answerLabel);
+        applicationFrame.add(answerLabel, BorderLayout.CENTER);
 
         askMeButton = new JButton("Ask Me!");
-        applicationFrame.add(askMeButton);
+        applicationFrame.add(askMeButton, BorderLayout.SOUTH);
 
         applicationFrame.setVisible(true);
     }

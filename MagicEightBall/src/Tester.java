@@ -6,7 +6,7 @@ public class Tester {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new MagicEightBall();
+                new MagicBall();
             }
         });
     }
